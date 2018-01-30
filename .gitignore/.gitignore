@@ -7,3 +7,11 @@ Problem: Given a picture of wheat grains touching each other. So the problem is 
   2. Segment grains based on these points.
   
   3. Finally approximate the missing part of grain.
+
+Failed Solution:
+
+ 1. eigen vectors and value: these can not be used if there is more the one grain to approx. identify grain border.
+ 
+ 2. K-mean or K-mean++: k-mean clusterin can provide a good approximation of a grain but the problem with k-means is we does not know how many grain can be present in a picture. So it can be successful if we identify the number of grain present in a picture.
+ 
+Possible solution:

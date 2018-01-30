@@ -1,0 +1,9 @@
+Problem: Given a picture of wheat grains touching each other. So the problem is to generate images containing only one wheat grain in it from the given wheat picture.
+
+ -Problem is divided in Two parts:
+ 
+  1. Find the points on border that connect the wheat grains.
+  
+  2. Segment grains based on these points.
+  
+  3. Finally approximate the missing part of grain.

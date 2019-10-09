@@ -1,6 +1,6 @@
 import cv2, numpy as np
 from Area import areaThreshold_by_havg, areaThreshold_by_avg
-from codes.threshold import otsu_threshold
+from threshold import otsu_threshold
 from _8connected import get_8connected_v2
 from util import *
 import warnings
@@ -52,6 +52,7 @@ def segment_image4(img_file):
     # timg = np.array([[[0,0,0] if mask[i,j] == 0 else org[i,j] for j in range(w)] for i in range(h)], dtype=np.uint8)
 
     # removing very small particals (smaller the 2^3 the average size)
+    print(s)
     low_Tarea, up_Tarea = areaThreshold_by_havg(s, 3)
     slist = list(s)
     for i in slist:

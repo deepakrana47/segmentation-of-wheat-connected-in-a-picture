@@ -1,6 +1,6 @@
 import os
 from util import *
-from L2_Segmentation_v3 import segment_image4
+from L2_Segmentation import segment_image4
 
 def get_files(indir):
     indir = indir.rstrip('/')
@@ -16,15 +16,17 @@ def get_files(indir):
     return files
 
 if __name__ == "__main__":
-    in_dir = 'over_lapping_grain/'
+    in_dir = 'overlapping_grain'
     img_files = get_files(in_dir)
     out = 'Result_grain/'
     if not os.path.isdir(out): os.mkdir(out)
     count = 0
     for img in img_files:
+        if not (img.endswith(".jpg") | img.endswith(".jpeg") | img.endswith(".png")):
+            continue
         print img
         seg, s, imgRectange, mask= segment_image4(img)
-        print s
+        # print s
         if not seg: continue
         o = out+img.split('.')[0][len(in_dir):]+'_'
         for i in s:
